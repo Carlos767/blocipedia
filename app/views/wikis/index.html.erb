@@ -1,0 +1,13 @@
+<h1>All Wikis</h1>
+<%= @wikis.inspect %>
+ <% @wikis.each do |wiki| %>
+   <%= wiki.inspect %>
+	<div class="media">
+		<div class="media-body">
+			<h4 calss="media-heading">
+				<% raise "Found wiki without id: #{wiki.inspect}" unless wiki.id %>
+				<%= link_to wiki.title, wiki_path(wiki) %>
+			</h4>
+		</div>
+	</div>
+<% end %>
